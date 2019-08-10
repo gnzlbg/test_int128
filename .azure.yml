@@ -6,6 +6,8 @@ jobs:
     steps:
       - bash: gcc -shared -o gcc_int128.dll gcc_int128_src.c -Wl,--output-def,gcc_int128.def
       - bash: ls
+      - bash: lib /def:your_dll.def
+      - bash: ls
       - bash: clang-cl clang_int128_src.c -I gcc_int128.dll
       - bash: ls
       - bash: ./a.out
