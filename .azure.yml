@@ -3,6 +3,6 @@ jobs:
     pool:
       vmImage: vs2017-win2016
     steps:
-      - gcc -shared -o gcc_int128.dll gcc_int128_src.c -Wl,--output-def,gcc_int128.def
-      - clang --target x86_64-pc-windows-msvc clang_int128_src -lgcc_int128.dll
-      - ./a.out
+      - bash: gcc -shared -o gcc_int128.dll gcc_int128_src.c -Wl,--output-def,gcc_int128.def
+      - bash: clang --target x86_64-pc-windows-msvc clang_int128_src -lgcc_int128.dll
+      - bash: ./a.out
